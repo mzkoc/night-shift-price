@@ -1,0 +1,10 @@
+{
+  "title": "The price of protecting the night shift: code, instances and results",
+  "upload_type": "software",
+  "description": "Code (evaluator, CP-SAT model, dispatching rules, GP-RKO and competitors), instance generator, irace scripts, logs and raw results of the computational study of the article 'The Price of Protecting the Night Shift: Goal Programming and Reliable Counterfactual Pricing for Weaving Scheduling with Drawing-in Crews'.",
+  "creators": [
+    {"name": "Koç, Muhammed Zahid", "affiliation": "Karabük University", "orcid": "0000-0002-5774-3978"}
+  ],
+  "license": "MIT",
+  "keywords": ["goal programming", "random-key optimizer", "parallel machine scheduling", "night work", "social sustainability", "textile weaving"]
+}
