@@ -1,0 +1,5 @@
+__pycache__/
+*.pkl
+*.pkl.tmp
+tune_payoff_*.json
+*.png
