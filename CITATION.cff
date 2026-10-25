@@ -8,5 +8,6 @@ authors:
     affiliation: "Karabük University, Department of Industrial Engineering"
 license: MIT
 version: "1.0.0"
-date-released: "2026-10-31"
+date-released: "2026-10-25"
+doi: "10.5281/zenodo.23649333"
 repository-code: "https://github.com/mzkoc/night-shift-price"
