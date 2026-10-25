@@ -1,0 +1,234 @@
+WEAVING GP MODEL v7 | experiments D1, D2 | workers 18, CP-SAT threads 16
+replications (1, 2, 3, 4, 5), budgets {'S': 20000, 'M': 50000, 'L': 100000}, OT_MAX 180 min, L_MAX 300 m
+BRKGA-S configuration {'p': 100, 'pe': 0.1246, 'pm': 0.2751, 'rho': 0.8608} (irace, brkga_s_cfg.json)
+
+
+#### D1  small instances, one crew: exact validation and exact price of the night rule
+   S1         n=  9 m= 4 C=1 orders= 4 | ideal T=9.4h S=0.0h O=0.0h | nadir T=18.9h S=9.3h O=0.0h
+   S2         n= 10 m= 3 C=1 orders= 3 | ideal T=9.9h S=0.0h O=0.0h | nadir T=10.9h S=3.6h O=0.0h
+   S3         n= 10 m= 3 C=1 orders= 3 | ideal T=0.0h S=9.3h O=0.0h | nadir T=5.2h S=13.2h O=0.0h
+   S4         n= 10 m= 4 C=1 orders= 3 | ideal T=9.1h S=0.0h O=0.0h | nadir T=44.0h S=7.2h O=0.0h
+   S5         n=  9 m= 4 C=1 orders= 3 | ideal T=9.6h S=0.0h O=0.0h | nadir T=54.4h S=19.2h O=1.9h
+   S6         n=  8 m= 4 C=1 orders= 3 | ideal T=12.5h S=0.0h O=0.0h | nadir T=38.7h S=19.8h O=1.3h
+   S7         n=  8 m= 4 C=1 orders= 3 | ideal T=9.6h S=0.0h O=0.0h | nadir T=38.6h S=9.3h O=0.0h
+   S8         n=  7 m= 4 C=1 orders= 3 | ideal T=9.4h S=0.0h O=0.0h | nadir T=9.4h S=0.0h O=0.0h
+   S9         n=  7 m= 4 C=1 orders= 3 | ideal T=1.3h S=3.6h O=0.0h | nadir T=29.1h S=24.3h O=2.6h
+   S10        n=  8 m= 3 C=1 orders= 3 | ideal T=0.0h S=0.0h O=0.0h | nadir T=0.0h S=0.0h O=0.0h
+   payoff tables (with CP-SAT) in 151 s
+   CP-SAT runs done (324 s)
+      D1 heuristics: 168/1680 tasks, 24 s
+      D1 heuristics: 336/1680 tasks, 48 s
+      D1 heuristics: 504/1680 tasks, 75 s
+      D1 heuristics: 672/1680 tasks, 99 s
+      D1 heuristics: 840/1680 tasks, 124 s
+      D1 heuristics: 1008/1680 tasks, 147 s
+      D1 heuristics: 1176/1680 tasks, 168 s
+      D1 heuristics: 1344/1680 tasks, 187 s
+      D1 heuristics: 1512/1680 tasks, 208 s
+      D1 heuristics: 1680/1680 tasks, 227 s
+   D1 heuristics: 1680 tasks in 227 s
+
+======================================================================================================================
+TABLE 1  D1 small instances (one crew): methods against the best-known schedule
+======================================================================================================================
+  dv = attainment minus best-known attainment, in % of the objective ranges (lexicographic: % of the tardiness range);
+  dT, dS = excess tardiness and drawing-in time over the best-known schedule (h); hit = runs reaching the best known
+  method            runs   mean dv      sd   max dv   hit %    dT h    dS h   s/run
+  CP-SAT              80    -0.000   0.000    0.000   100.0     1.1    -0.5     2.2
+  GP-RKO             400     1.944   9.929   99.683    87.2     0.9    -0.1     2.4
+  BRKGA              400     8.929  64.339  650.000    87.5     0.2     0.3     2.6
+  BRKGA-S            400     0.991   5.467   63.063    91.2     0.5    -0.1     2.6
+  SEED-LS            400    29.035  52.140  287.151    43.2     3.7     4.4     2.5
+  EDD                 80   585.1491471.220 5412.545    17.5    13.7    16.8     0.0
+  ATCS                80   242.958 472.295 1669.902    20.0    14.3     3.4     0.0
+  FAM                 80   256.012 489.635 1669.902    27.5    10.5     2.9     0.0
+  NEDD                80   216.214 471.502 1669.902    27.5     8.8     5.1     0.0
+  NATCS               80   249.593 471.438 1669.902    20.0    14.8     3.4     0.0
+  Friedman over 80 blocks (instance x scheme x policy): chi2=321.12, p=8.59e-64
+  mean ranks: CP-SAT 2.78, GP-RKO 3.52, BRKGA 3.71, BRKGA-S 3.27, SEED-LS 5.17, EDD 7.97, ATCS 7.36, FAM 6.81, NEDD 6.92, NATCS 7.48
+  Wilcoxon GP-RKO vs (Holm-adjusted p): CP-SAT 2.48e-05, BRKGA 6.23e-01, BRKGA-S 2.08e-02, SEED-LS 9.58e-09, EDD 1.48e-11, ATCS 2.81e-11, FAM 2.10e-10, NEDD 2.10e-10, NATCS 2.81e-11
+      D1 night minimisation: 4/40 tasks, 1 s
+      D1 night minimisation: 8/40 tasks, 2 s
+      D1 night minimisation: 12/40 tasks, 2 s
+      D1 night minimisation: 16/40 tasks, 2 s
+      D1 night minimisation: 20/40 tasks, 2 s
+      D1 night minimisation: 24/40 tasks, 2 s
+      D1 night minimisation: 28/40 tasks, 2 s
+      D1 night minimisation: 32/40 tasks, 2 s
+      D1 night minimisation: 36/40 tasks, 2 s
+      D1 night minimisation: 40/40 tasks, 2 s
+   D1 night minimisation: 40 tasks in 2 s
+
+======================================================================================================================
+TABLE 2  D1 exact price of the night rule; '*' marks pairs where CP-SAT proved both optima
+======================================================================================================================
+  nightDI: night drawing-in of the best-known night-crew schedule; min: least night drawing-in among equally good schedules
+  inst  scheme     proven     dv%   dT(h)    dT%    late   dS(h)    dE%  O(h) pause  nightDI   min
+  S1    Balanced        *    0.00     0.9   10.0     1/1     0.0   0.16   0.0     0      0.9   0.0
+  S2    Balanced        *    0.00     0.0    0.0     1/1     0.0   0.00   0.0     0      0.0   0.0
+  S3    Balanced        *   38.13    -3.2 -100.0     0/1     3.9  -0.66   0.0     1      2.0   2.0
+  S4    Balanced        *    0.00     0.0    0.0     2/2     0.0   0.00   0.0     0      0.0   0.0
+  S5    Balanced        *   13.63     6.1   18.4     1/2     0.0  -1.35   0.0     1      8.0   8.0
+  S6    Balanced        *    0.00     0.0    0.0     2/2     0.0   0.00   0.0     0      0.0   0.0
+  S7    Balanced        *    0.00     0.0    0.0     1/1     0.0   0.00   0.0     0      0.0   0.0
+  S8    Balanced        *    0.00     0.0    0.0     2/2     0.0   0.00   0.0     0      0.0   0.0
+  S9    Balanced        *    0.00     0.5   19.3     2/1     0.0  -2.61   0.0     0      2.6   1.0
+  S10   Balanced        *    0.00     0.0    0.0     0/0     0.0   0.00   0.0     0      0.0   0.0
+  -> Balanced: rule binds in 2/10 instances; both optima proven in 10/10; mean dT 0.43 h, mean dS 0.39 h
+  S1    Delivery        *    0.00     0.9   10.0     1/1     0.0   0.16   0.0     0      0.9   0.9
+  S2    Delivery        *    0.00     0.0    0.0     1/1     0.0   0.00   0.0     0      0.0   0.0
+  S3    Delivery        *    0.00     0.0    0.0     0/0     0.0   1.16   0.0     1      3.5   3.5
+  S4    Delivery        *    0.00     0.0    0.0     2/2     0.0   0.00   0.0     0      0.0   0.0
+  S5    Delivery        *    0.03     2.9   29.8     2/1     0.0  -0.21   1.9     1      8.0   8.0
+  S6    Delivery        *    7.35     7.7   61.5     2/3     0.0   0.19   0.0     0      1.3   1.3
+  S7    Delivery        *    0.00     0.0    0.0     1/1     0.0   0.00   0.0     0      0.0   0.0
+  S8    Delivery        *    0.00     0.0    0.0     2/2     0.0   0.00   0.0     0      0.0   0.0
+  S9    Delivery        *    0.00     0.5   19.3     2/1     0.0  -2.61   0.0     0      2.6   1.0
+  S10   Delivery        *    0.00     0.0    0.0     0/0     0.0   0.00   0.0     0      0.0   0.0
+  -> Delivery: rule binds in 2/10 instances; both optima proven in 10/10; mean dT 1.20 h, mean dS 0.00 h
+  S1    Lex0            *    9.82     0.9   10.0     1/1     0.0   0.16   0.0     0      0.9   0.9
+  S2    Lex0            *    0.00     0.0    0.0     1/1     0.0   0.00   0.0     0      0.0   0.0
+  S3    Lex0            *    0.00     0.0    0.0     0/0     0.0   1.16   0.0     1      3.5   3.5
+  S4    Lex0            *    0.00     0.0    0.0     2/2     0.0   0.00   0.0     0      0.0   0.0
+  S5    Lex0            *    6.40     2.9   29.8     2/1     0.0  -0.21   1.9     1      8.0   8.0
+  S6    Lex0            *    0.06     0.0    0.1     3/1    -9.9  -1.97   1.3     0     11.2  11.2
+  S7    Lex0            *    0.00     0.0    0.0     1/1     0.0   0.00   0.0     0      0.0   0.0
+  S8    Lex0            *    0.00     0.0    0.0     2/2     0.0   0.00   0.0     0      0.0   0.0
+  S9    Lex0            *    5.34     1.5  115.6     1/1   -13.5   3.48   2.6     0      5.7   5.7
+  S10   Lex0            *    0.00     0.0    0.0     0/0     0.0   0.00   0.0     0      0.0   0.0
+  -> Lex0: rule binds in 4/10 instances; both optima proven in 10/10; mean dT 0.53 h, mean dS -2.34 h
+  S1    Lex10           *    0.00     0.9   10.0     1/1     0.0   0.16   0.0     0      0.9   0.9
+  S2    Lex10           *    0.00     0.0    0.0     1/1     0.0   0.00   0.0     0      0.0   0.0
+  S3    Lex10           *    0.00     0.0    0.0     0/0     0.0   1.16   0.0     1      3.5   3.5
+  S4    Lex10           *    0.00     0.0    0.0     2/2     0.0   0.00   0.0     0      0.0   0.0
+  S5    Lex10           *    4.25     2.9   29.8     2/1     0.0  -0.21   1.9     1      8.0   8.0
+  S6    Lex10           *    0.00     0.0    0.0     3/3     0.0   0.00   1.3     0      1.3   1.3
+  S7    Lex10           *    0.00     0.0    0.0     1/1     0.0   0.00   0.0     0      0.0   0.0
+  S8    Lex10           *    0.00     0.0    0.0     2/2     0.0   0.00   0.0     0      0.0   0.0
+  S9    Lex10           *    4.88     1.5  115.6     1/1   -13.5   3.48   2.6     0      5.7   5.7
+  S10   Lex10           *    0.00     0.0    0.0     0/0     0.0   0.00   0.0     0      0.0   0.0
+  -> Lex10: rule binds in 3/10 instances; both optima proven in 10/10; mean dT 0.53 h, mean dS -1.35 h
+
+#### D2  scalability and algorithm comparison (night rule)
+      payoff tables: 1/10 tasks, 52 s
+      payoff tables: 2/10 tasks, 81 s
+      payoff tables: 3/10 tasks, 81 s
+      payoff tables: 4/10 tasks, 81 s
+      payoff tables: 5/10 tasks, 81 s
+      payoff tables: 6/10 tasks, 81 s
+      payoff tables: 7/10 tasks, 83 s
+      payoff tables: 8/10 tasks, 83 s
+      payoff tables: 9/10 tasks, 83 s
+      payoff tables: 10/10 tasks, 83 s
+   payoff tables: 10 tasks in 84 s
+   M1         n= 34 m=16 C=1 orders= 6 | ideal T=44.1h S=0.0h O=0.0h | nadir T=98.2h S=55.4h O=0.7h
+   M2         n= 61 m=13 C=1 orders= 8 | ideal T=70.6h S=15.8h O=0.0h | nadir T=192.0h S=130.2h O=3.4h
+   M3         n= 44 m=15 C=1 orders= 6 | ideal T=109.0h S=7.3h O=0.0h | nadir T=218.8h S=88.0h O=5.5h
+   M4         n= 52 m=13 C=1 orders= 7 | ideal T=20.6h S=14.6h O=0.0h | nadir T=144.3h S=73.5h O=3.2h
+   M5         n= 53 m=11 C=1 orders= 9 | ideal T=0.0h S=3.7h O=0.0h | nadir T=100.2h S=42.4h O=2.0h
+   M6         n= 54 m=11 C=1 orders= 7 | ideal T=2.9h S=5.3h O=0.0h | nadir T=79.8h S=38.4h O=2.9h
+   M7         n= 67 m=12 C=1 orders=10 | ideal T=0.0h S=7.0h O=0.0h | nadir T=21.5h S=63.6h O=1.4h
+   M8         n= 63 m=14 C=1 orders=10 | ideal T=22.1h S=5.7h O=0.0h | nadir T=127.8h S=42.3h O=0.0h
+   M9         n= 44 m=12 C=1 orders= 6 | ideal T=81.5h S=0.0h O=0.0h | nadir T=241.5h S=52.2h O=3.5h
+   M10        n= 37 m=14 C=1 orders= 6 | ideal T=45.5h S=0.0h O=0.0h | nadir T=107.2h S=35.4h O=0.9h
+      D2 M: 92/920 tasks, 96 s
+      D2 M: 184/920 tasks, 268 s
+      D2 M: 276/920 tasks, 392 s
+      D2 M: 368/920 tasks, 535 s
+      D2 M: 460/920 tasks, 677 s
+      D2 M: 552/920 tasks, 823 s
+      D2 M: 644/920 tasks, 1001 s
+      D2 M: 736/920 tasks, 1159 s
+      D2 M: 828/920 tasks, 1276 s
+      D2 M: 920/920 tasks, 1365 s
+   D2 M: 920 tasks in 1366 s
+   D2 M: ideal improved after all runs in 5/10 instances; T by mean 0.8 h (max 2.8 h, mean 0.75% of R_T), S by mean 0.0 h; goals and attainments recomputed
+
+======================================================================================================================
+TABLE 3M  D2 class M: methods against the best-known schedule (equal evaluation budget)
+======================================================================================================================
+  dv = attainment minus best-known attainment, in % of the objective ranges (lexicographic: % of the tardiness range);
+  dT, dS = excess tardiness and drawing-in time over the best-known schedule (h); hit = runs reaching the best known
+  method            runs   mean dv      sd   max dv   hit %    dT h    dS h   s/run
+  GP-RKO             100     9.785   8.704   38.587     6.0     7.9     5.1    25.9
+  BRKGA              100   105.423 112.679  603.795     0.0    67.7    40.6    31.2
+  BRKGA-S            100    15.205  12.882   63.476     1.0    12.8     6.8    29.7
+  SEED-LS            100    19.555  20.556  109.402     1.0    14.0     8.3    25.7
+  GP-RKO-noX         100     9.844   9.071   31.674     4.0     8.2     5.6    26.1
+  GP-RKO-noSA        100    11.713   9.696   39.627     3.0     8.7     6.7    26.3
+  GP-RKO-noILS       100     9.991   8.984   32.713     4.0     8.1     5.1    25.8
+  GP-RKO-noMoves     100     9.841   8.913   31.940     4.0     7.2     4.9    25.9
+  GP-RKO-noSeed      100    81.246  88.128  456.390     0.0    54.7    37.8    27.4
+  EDD                 20  1081.8001043.317 4064.112     0.0   755.3   195.7     0.0
+  ATCS                20   117.284  59.611  228.300     0.0    79.0    30.7     0.0
+  FAM                 20   124.183  71.452  302.102     0.0    83.7    32.0     0.0
+  NEDD                20   229.291 129.880  445.431     0.0   170.1    87.7     0.0
+  NATCS               20   102.017  57.803  204.096     0.0    76.9    29.1     0.0
+  Friedman over 20 blocks (instance x scheme x policy): chi2=218.37, p=2.26e-39
+  mean ranks: GP-RKO 3.25, BRKGA 10.35, BRKGA-S 5.05, SEED-LS 5.70, GP-RKO-noX 3.27, GP-RKO-noSA 3.95, GP-RKO-noILS 3.42, GP-RKO-noMoves 3.40, GP-RKO-noSeed 9.15, EDD 14.00, ATCS 10.50, FAM 10.50, NEDD 11.95, NATCS 10.50
+  Wilcoxon GP-RKO vs (Holm-adjusted p): BRKGA 1.15e-03, BRKGA-S 1.59e-02, SEED-LS 6.97e-03, GP-RKO-noX 1.00e+00, GP-RKO-noSA 2.93e-01, GP-RKO-noILS 1.00e+00, GP-RKO-noMoves 1.00e+00, GP-RKO-noSeed 1.15e-03, EDD 1.15e-03, ATCS 1.15e-03, FAM 1.15e-03, NEDD 1.15e-03, NATCS 1.15e-03
+      payoff tables: 1/10 tasks, 340 s
+      payoff tables: 2/10 tasks, 372 s
+      payoff tables: 3/10 tasks, 372 s
+      payoff tables: 4/10 tasks, 372 s
+      payoff tables: 5/10 tasks, 372 s
+      payoff tables: 6/10 tasks, 372 s
+      payoff tables: 7/10 tasks, 376 s
+      payoff tables: 8/10 tasks, 376 s
+      payoff tables: 9/10 tasks, 376 s
+      payoff tables: 10/10 tasks, 376 s
+   payoff tables: 10 tasks in 376 s
+   L1         n=167 m=53 C=3 orders=20 | ideal T=39.3h S=0.0h O=0.0h | nadir T=258.8h S=139.4h O=1.4h
+   L2         n=194 m=54 C=3 orders=22 | ideal T=6.3h S=20.2h O=0.0h | nadir T=185.4h S=152.4h O=1.5h
+   L3         n=149 m=60 C=3 orders=16 | ideal T=44.7h S=0.0h O=0.0h | nadir T=267.8h S=65.2h O=2.9h
+   L4         n=157 m=53 C=3 orders=18 | ideal T=100.1h S=26.7h O=0.0h | nadir T=354.9h S=170.4h O=0.6h
+   L5         n=187 m=47 C=2 orders=21 | ideal T=47.9h S=10.8h O=0.0h | nadir T=194.9h S=107.8h O=0.0h
+   L6         n=159 m=45 C=2 orders=17 | ideal T=154.0h S=23.6h O=0.0h | nadir T=417.6h S=137.7h O=0.7h
+   L7         n=199 m=43 C=2 orders=20 | ideal T=29.4h S=28.1h O=0.0h | nadir T=366.8h S=171.8h O=14.8h
+   L8         n=172 m=58 C=3 orders=19 | ideal T=138.4h S=6.2h O=0.0h | nadir T=401.6h S=163.8h O=2.7h
+   L9         n=128 m=51 C=3 orders=15 | ideal T=165.0h S=8.4h O=0.0h | nadir T=313.0h S=144.9h O=1.6h
+   L10        n=149 m=58 C=3 orders=16 | ideal T=85.6h S=0.0h O=0.0h | nadir T=257.8h S=63.4h O=0.5h
+      D2 L: 97/970 tasks, 1032 s
+      D2 L: 194/970 tasks, 2083 s
+      D2 L: 291/970 tasks, 2840 s
+      D2 L: 388/970 tasks, 3722 s
+      D2 L: 485/970 tasks, 4714 s
+      D2 L: 582/970 tasks, 5502 s
+      D2 L: 679/970 tasks, 6535 s
+      D2 L: 776/970 tasks, 7350 s
+      D2 L: 873/970 tasks, 7959 s
+      D2 L: 970/970 tasks, 8521 s
+   D2 L: 970 tasks in 8521 s
+   D2 L: ideal improved after all runs in 7/10 instances; T by mean 1.3 h (max 3.5 h, mean 0.55% of R_T), S by mean 0.0 h; goals and attainments recomputed
+
+======================================================================================================================
+TABLE 3L  D2 class L: methods against the best-known schedule (equal evaluation budget)
+======================================================================================================================
+  dv = attainment minus best-known attainment, in % of the objective ranges (lexicographic: % of the tardiness range);
+  dT, dS = excess tardiness and drawing-in time over the best-known schedule (h); hit = runs reaching the best known
+  method            runs   mean dv      sd   max dv   hit %    dT h    dS h   s/run
+  GP-RKO             100     9.907   9.121   32.755     2.0    24.2    19.9   152.5
+  BRKGA              100   255.801 198.951 1284.139     0.0   531.5   205.0   198.5
+  BRKGA-S            100    21.675  11.328   44.531     0.0    48.0    35.9   180.7
+  SEED-LS            100     8.013   8.179   27.938     6.0    18.5    17.9   148.1
+  GP-RKO-noX         100    11.398  11.507   41.072     1.0    28.0    23.6   150.3
+  GP-RKO-noSA        100    11.565   8.367   34.958     0.0    27.6    26.4   151.1
+  GP-RKO-noILS       100    10.517  10.459   34.628     3.0    27.1    18.0   149.1
+  GP-RKO-noMoves     100     9.740   9.918   32.249     3.0    24.6    19.7   149.1
+  GP-RKO-noSeed      100   118.280  77.162  478.330     0.0   249.5   144.2   167.4
+  EDD                 20  2786.2272427.203 8651.081     0.0  2994.1   748.8     0.0
+  ATCS                20   241.845 278.991  970.983     0.0   162.3    93.8     0.0
+  FAM                 20   387.825 716.500 3002.354     0.0   107.1    80.0     0.0
+  NEDD                20   191.099 151.400  419.014     0.0   382.7   231.0     0.0
+  NATCS               20    91.792  38.645  202.840     0.0   174.3    94.1     0.0
+  Friedman over 20 blocks (instance x scheme x policy): chi2=222.67, p=2.92e-40
+  mean ranks: GP-RKO 3.30, BRKGA 11.95, BRKGA-S 6.60, SEED-LS 2.85, GP-RKO-noX 4.15, GP-RKO-noSA 4.30, GP-RKO-noILS 3.65, GP-RKO-noMoves 3.15, GP-RKO-noSeed 9.90, EDD 14.00, ATCS 10.75, FAM 10.25, NEDD 10.50, NATCS 9.65
+  Wilcoxon GP-RKO vs (Holm-adjusted p): BRKGA 1.15e-03, BRKGA-S 1.15e-03, SEED-LS 6.77e-01, GP-RKO-noX 6.77e-01, GP-RKO-noSA 6.77e-01, GP-RKO-noILS 1.00e+00, GP-RKO-noMoves 1.00e+00, GP-RKO-noSeed 1.15e-03, EDD 1.15e-03, ATCS 1.15e-03, FAM 1.15e-03, NEDD 1.15e-03, NATCS 1.15e-03
+
+  Sensitivity of the lexicographic weighting (class L, Lex schemes, paired runs, v6 weighting minus strict):
+    dv  0.276 [-0.867, 1.466] %, Wilcoxon p=0.504;  dT    1.2 [-1.6, 4.7] h;  dS    1.9 [-4.6, 8.4] h  (50 pairs)
+
+Saved v7_D1_D2_results.csv
+Saved figures v7_D1_D2_crews.png, _tolerance.png, _pricemap.png, _convergence.png
+
+Total time 10906 s.  Done.

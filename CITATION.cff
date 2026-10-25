@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use this code or data, please cite it as below."
+title: "The price of protecting the night shift: code, instances and results"
+authors:
+  - family-names: "Koç"
+    given-names: "Muhammed Zahid"
+    orcid: "https://orcid.org/0000-0002-5774-3978"
+    affiliation: "Karabük University, Department of Industrial Engineering"
+license: MIT
+version: "1.0.0"
+date-released: "2026-10-31"
+repository-code: "https://github.com/mzkoc/night-shift-price"

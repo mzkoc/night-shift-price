@@ -1,0 +1,612 @@
+WEAVING GP MODEL v9 | experiments D1, D3, D6, D4 | workers 18, CP-SAT threads 16
+replications (1, 2, 3, 4, 5), budgets {'S': 20000, 'M': 50000, 'L': 100000}, OT_MAX 180 min, L_MAX 300 m
+BRKGA-S configuration {'p': 100, 'pe': 0.1246, 'pm': 0.2751, 'rho': 0.8608} (irace, brkga_s_cfg.json)
+
+
+#### D1  small instances, one crew: exact validation and exact price of the night rule
+   S1         n=  9 m= 4 C=1 orders= 4 | ideal T=9.4h S=0.0h O=0.0h | nadir T=18.9h S=9.3h O=0.0h
+   S2         n= 10 m= 3 C=1 orders= 3 | ideal T=9.9h S=0.0h O=0.0h | nadir T=10.9h S=3.6h O=0.0h
+   S3         n= 10 m= 3 C=1 orders= 3 | ideal T=0.0h S=9.3h O=0.0h | nadir T=5.2h S=13.2h O=0.0h
+   S4         n= 10 m= 4 C=1 orders= 3 | ideal T=9.1h S=0.0h O=0.0h | nadir T=44.0h S=7.2h O=0.0h
+   S5         n=  9 m= 4 C=1 orders= 3 | ideal T=9.6h S=0.0h O=0.0h | nadir T=54.4h S=19.2h O=1.9h
+   S6         n=  8 m= 4 C=1 orders= 3 | ideal T=12.5h S=0.0h O=0.0h | nadir T=38.7h S=19.8h O=1.3h
+   S7         n=  8 m= 4 C=1 orders= 3 | ideal T=9.6h S=0.0h O=0.0h | nadir T=38.6h S=9.3h O=0.0h
+   S8         n=  7 m= 4 C=1 orders= 3 | ideal T=9.4h S=0.0h O=0.0h | nadir T=9.4h S=0.0h O=0.0h
+   S9         n=  7 m= 4 C=1 orders= 3 | ideal T=1.3h S=3.6h O=0.0h | nadir T=29.1h S=24.3h O=2.6h
+   S10        n=  8 m= 3 C=1 orders= 3 | ideal T=0.0h S=0.0h O=0.0h | nadir T=0.0h S=0.0h O=0.0h
+   payoff tables (with CP-SAT) in 125 s
+   CP-SAT runs done (330 s)
+      D1 heuristics: 84/1680 tasks, 8 s
+      D1 heuristics: 168/1680 tasks, 14 s
+      D1 heuristics: 252/1680 tasks, 21 s
+      D1 heuristics: 336/1680 tasks, 28 s
+      D1 heuristics: 420/1680 tasks, 36 s
+      D1 heuristics: 504/1680 tasks, 44 s
+      D1 heuristics: 588/1680 tasks, 51 s
+      D1 heuristics: 672/1680 tasks, 58 s
+      D1 heuristics: 756/1680 tasks, 66 s
+      D1 heuristics: 840/1680 tasks, 73 s
+      D1 heuristics: 924/1680 tasks, 80 s
+      D1 heuristics: 1008/1680 tasks, 86 s
+      D1 heuristics: 1092/1680 tasks, 92 s
+      D1 heuristics: 1176/1680 tasks, 99 s
+      D1 heuristics: 1260/1680 tasks, 105 s
+      D1 heuristics: 1344/1680 tasks, 110 s
+      D1 heuristics: 1428/1680 tasks, 116 s
+      D1 heuristics: 1512/1680 tasks, 123 s
+      D1 heuristics: 1596/1680 tasks, 128 s
+      D1 heuristics: 1680/1680 tasks, 134 s
+   D1 heuristics: 1680 tasks (1680 run now) in 134 s
+
+======================================================================================================================
+TABLE 1  D1 small instances (one crew): methods against the best-known schedule
+======================================================================================================================
+  dv = attainment minus best-known attainment, in % of the objective ranges (lexicographic: % of the tardiness range);
+  dT, dS = excess tardiness and drawing-in time over the best-known schedule (h); hit = runs reaching the best known
+  method            runs   mean dv      sd   max dv   hit %    dT h    dS h   s/run
+  CP-SAT              80    -0.000   0.000    0.000   100.0     0.9    -0.4     2.6
+  GP-RKO             400     1.944   9.929   99.683    88.2     0.8     0.0     1.4
+  BRKGA              400     8.929  64.339  650.000    87.5     0.1     0.4     1.5
+  BRKGA-S            400     3.020  22.706  353.336    88.2     0.5     0.2     1.5
+  SEED-LS            400    29.035  52.140  287.151    43.2     3.6     4.5     1.5
+  EDD                 80   585.1491471.220 5412.545    17.5    13.6    16.9     0.0
+  ATCS                80   242.958 472.295 1669.902    20.0    14.1     3.5     0.0
+  FAM                 80   256.012 489.635 1669.902    27.5    10.4     3.0     0.0
+  NEDD                80   216.214 471.502 1669.902    27.5     8.7     5.2     0.0
+  NATCS               80   249.593 471.438 1669.902    20.0    14.6     3.5     0.0
+  Friedman over 80 blocks (instance x scheme x policy): chi2=320.72, p=1.04e-63
+  mean ranks: CP-SAT 2.74, GP-RKO 3.44, BRKGA 3.67, BRKGA-S 3.44, SEED-LS 5.16, EDD 7.97, ATCS 7.36, FAM 6.81, NEDD 6.92, NATCS 7.48
+  Wilcoxon GP-RKO vs (Holm-adjusted p): CP-SAT 2.48e-05, BRKGA 1.00e+00, BRKGA-S 1.00e+00, SEED-LS 9.58e-09, EDD 1.48e-11, ATCS 2.81e-11, FAM 2.10e-10, NEDD 2.10e-10, NATCS 2.81e-11
+      D1 restoration: 4/80 tasks, 0 s
+      D1 restoration: 8/80 tasks, 0 s
+      D1 restoration: 12/80 tasks, 0 s
+      D1 restoration: 16/80 tasks, 0 s
+      D1 restoration: 20/80 tasks, 1 s
+      D1 restoration: 24/80 tasks, 1 s
+      D1 restoration: 28/80 tasks, 1 s
+      D1 restoration: 32/80 tasks, 1 s
+      D1 restoration: 36/80 tasks, 1 s
+      D1 restoration: 40/80 tasks, 1 s
+      D1 restoration: 44/80 tasks, 1 s
+      D1 restoration: 48/80 tasks, 1 s
+      D1 restoration: 52/80 tasks, 1 s
+      D1 restoration: 56/80 tasks, 1 s
+      D1 restoration: 60/80 tasks, 1 s
+      D1 restoration: 64/80 tasks, 1 s
+      D1 restoration: 68/80 tasks, 2 s
+      D1 restoration: 72/80 tasks, 2 s
+      D1 restoration: 76/80 tasks, 2 s
+      D1 restoration: 80/80 tasks, 2 s
+   D1 restoration: 80 tasks (80 run now) in 2 s
+      D1 night minimisation: 2/40 tasks, 0 s
+      D1 night minimisation: 4/40 tasks, 0 s
+      D1 night minimisation: 6/40 tasks, 0 s
+      D1 night minimisation: 8/40 tasks, 0 s
+      D1 night minimisation: 10/40 tasks, 0 s
+      D1 night minimisation: 12/40 tasks, 1 s
+      D1 night minimisation: 14/40 tasks, 1 s
+      D1 night minimisation: 16/40 tasks, 1 s
+      D1 night minimisation: 18/40 tasks, 1 s
+      D1 night minimisation: 20/40 tasks, 1 s
+      D1 night minimisation: 22/40 tasks, 1 s
+      D1 night minimisation: 24/40 tasks, 1 s
+      D1 night minimisation: 26/40 tasks, 1 s
+      D1 night minimisation: 28/40 tasks, 1 s
+      D1 night minimisation: 30/40 tasks, 1 s
+      D1 night minimisation: 32/40 tasks, 1 s
+      D1 night minimisation: 34/40 tasks, 1 s
+      D1 night minimisation: 36/40 tasks, 1 s
+      D1 night minimisation: 38/40 tasks, 1 s
+      D1 night minimisation: 40/40 tasks, 1 s
+   D1 night minimisation: 40 tasks (40 run now) in 1 s
+
+======================================================================================================================
+TABLE 2  D1 exact price of the night rule; '*' marks pairs where CP-SAT proved both optima (all three priorities)
+======================================================================================================================
+  best-known tardiness equals the proven CP-SAT tardiness in 76/80 proven pairs (instance x scheme x policy)
+  nightDI: night drawing-in of the best-known night-crew schedule; min: least night drawing-in among equally good schedules
+  inst  scheme     proven     dv%   dT(h)    dT%    late   dS(h)    dE%  O(h) pause  nightDI   min
+  S1    Balanced        *    0.00     9.5  101.4     2/1    -9.3  -1.02   0.0     0      0.9   0.0
+  S2    Balanced        *    0.00     0.0    0.0     1/1     0.0   0.00   0.0     0      0.0   0.0
+  S3    Balanced        *   38.13    -3.2 -100.0     0/1     3.9  -0.66   0.0     1      2.0   2.0
+  S4    Balanced        *    0.00     0.0    0.0     2/2     0.0   0.00   0.0     0      0.0   0.0
+  S5    Balanced        *   13.63     6.1   18.4     1/2     0.0  -3.11   0.0     0      8.0   8.0
+  S6    Balanced        *    0.00     0.0    0.0     2/2     0.0   0.00   0.0     0      0.0   0.0
+  S7    Balanced        *    0.00     0.0    0.0     1/1     0.0   0.00   0.0     0      0.0   0.0
+  S8    Balanced        *    0.00     0.0    0.0     2/2     0.0   0.00   0.0     0      0.0   0.0
+  S9    Balanced        *    0.00     0.5   19.3     2/1     0.0  -2.61   0.0     0      2.6   2.6
+  S10   Balanced        *    0.00     0.0    0.0     0/0     0.0   0.00   0.0     0      0.0   0.0
+  -> Balanced: rule binds in 2/10 instances; both optima proven in 10/10; mean dT 1.29 h, mean dS -0.54 h
+  S1    Delivery        *    0.00     0.9   10.0     1/1     0.0   0.16   0.0     0      0.9   0.9
+  S2    Delivery        *    0.00     0.0    0.0     1/1     0.0   0.00   0.0     0      0.0   0.0
+  S3    Delivery        *    0.00     0.0    0.0     0/0     0.0   1.16   0.0     1      3.5   3.5
+  S4    Delivery        *    0.00     0.0    0.0     2/2     0.0   0.00   0.0     0      0.0   0.0
+  S5    Delivery        *    0.03     2.9   29.8     2/1     0.0  -0.21   1.9     1      8.0   8.0
+  S6    Delivery        *    7.35     7.7   61.5     2/3     0.0   0.19   0.0     0      1.3   1.3
+  S7    Delivery        *    0.00     0.0    0.0     1/1     0.0   0.00   0.0     0      0.0   0.0
+  S8    Delivery        *    0.00     0.0    0.0     2/2     0.0   0.00   0.0     0      0.0   0.0
+  S9    Delivery        *    0.00     0.5   19.3     2/1     0.0  -2.61   0.0     0      2.6   2.6
+  S10   Delivery        *    0.00     0.0    0.0     0/0     0.0   0.00   0.0     0      0.0   0.0
+  -> Delivery: rule binds in 2/10 instances; both optima proven in 10/10; mean dT 1.20 h, mean dS 0.00 h
+  S1    Lex0            *    9.82     0.9   10.0     1/1     0.0   0.16   0.0     0      0.9   0.9
+  S2    Lex0            *    0.00     0.0    0.0     1/1     0.0   0.00   0.0     0      0.0   0.0
+  S3    Lex0            *    0.00     0.0    0.0     0/0     0.0   1.16   0.0     1      3.5   3.5
+  S4    Lex0            *    0.00     0.0    0.0     2/2     0.0   0.00   0.0     0      0.0   0.0
+  S5    Lex0            *    6.40     2.9   29.8     2/1     0.0  -0.21   1.9     1      8.0   8.0
+  S6    Lex0            *    0.06     0.0    0.1     3/1    -9.9  -1.97   1.3     0     11.2  11.2
+  S7    Lex0            *    0.00     0.0    0.0     1/1     0.0   0.00   0.0     0      0.0   0.0
+  S8    Lex0            *    0.00     0.0    0.0     2/2     0.0   0.00   0.0     0      0.0   0.0
+  S9    Lex0            *    5.34     1.5  115.6     1/1   -13.5   3.48   2.6     0      5.7   5.7
+  S10   Lex0            *    0.00     0.0    0.0     0/0     0.0   0.00   0.0     0      0.0   0.0
+  -> Lex0: rule binds in 4/10 instances; both optima proven in 10/10; mean dT 0.53 h, mean dS -2.34 h
+  S1    Lex10           *    0.00     0.9   10.0     1/1     0.0   0.16   0.0     0      0.9   0.9
+  S2    Lex10           *    0.00     0.0    0.0     1/1     0.0   0.00   0.0     0      0.0   0.0
+  S3    Lex10           *    0.00     0.0    0.0     0/0     0.0   1.16   0.0     1      3.5   3.5
+  S4    Lex10           *    0.00     0.0    0.0     2/2     0.0   0.00   0.0     0      0.0   0.0
+  S5    Lex10           *    4.25     2.9   29.8     2/1     0.0  -0.21   1.9     1      8.0   8.0
+  S6    Lex10           *    0.00     0.0    0.0     3/3     0.0   0.00   1.3     0      1.3   1.3
+  S7    Lex10           *    0.00     0.0    0.0     1/1     0.0   0.00   0.0     0      0.0   0.0
+  S8    Lex10           *    0.00     0.0    0.0     2/2     0.0   0.00   0.0     0      0.0   0.0
+  S9    Lex10           *    4.88     1.5  115.6     1/1   -13.5   3.48   2.6     0      5.7   5.7
+  S10   Lex10           *    0.00     0.0    0.0     0/0     0.0   0.00   0.0     0      0.0   0.0
+  -> Lex10: rule binds in 3/10 instances; both optima proven in 10/10; mean dT 0.53 h, mean dS -1.35 h
+
+#### D3  price map of the night rule (mill size, 50 looms; night rule, night crew, equal crew-hours;
+      day capacity C+1, C+2 under Lex0; Lex0 first, then Lex10 with the updated ideal)
+   resumed from the v8 checkpoint v8_D3_ckpt.pkl (v8 stage 5); runs and polishing are kept
+
+   TABLE 4d (effect of the polishing) is not available after a resume past the polishing stage
+      D3 restoration: 24/480 tasks, 87 s
+      D3 restoration: 48/480 tasks, 117 s
+      D3 restoration: 72/480 tasks, 199 s
+      D3 restoration: 96/480 tasks, 231 s
+      D3 restoration: 120/480 tasks, 343 s
+      D3 restoration: 144/480 tasks, 377 s
+      D3 restoration: 168/480 tasks, 428 s
+      D3 restoration: 192/480 tasks, 452 s
+      D3 restoration: 216/480 tasks, 578 s
+      D3 restoration: 240/480 tasks, 612 s
+      D3 restoration: 264/480 tasks, 663 s
+      D3 restoration: 288/480 tasks, 696 s
+      D3 restoration: 312/480 tasks, 788 s
+      D3 restoration: 336/480 tasks, 819 s
+      D3 restoration: 360/480 tasks, 919 s
+      D3 restoration: 384/480 tasks, 960 s
+      D3 restoration: 408/480 tasks, 1022 s
+      D3 restoration: 432/480 tasks, 1078 s
+      D3 restoration: 456/480 tasks, 1155 s
+      D3 restoration: 480/480 tasks, 1197 s
+   D3 restoration: 480 tasks (480 run now) in 1198 s
+   D3 restoration: twin pooling over 24 groups (11856 shared schedules)
+   D3 after restoration: ideal improved after all runs in 17/84 instances; T by mean 0.7 h (max 10.8 h, mean 0.27% of R_T), S by mean 0.0 h; goals and attainments recomputed
+
+======================================================================================================================
+TABLE 4g  D3 effect of the restoration stage on the price (h of tardiness; GP-RKO 50000 evaluations per instance, scheme and policy)
+======================================================================================================================
+  before: best-known schedules with ties broken by the restoration term over the pool; after: after the stage
+  scheme set                      n         before [95% CI]          after [95% CI]   change       redistrib. bef/aft        capacity bef/aft
+  Lex0   structured              72       20.5 [17.4, 24.2]       20.6 [17.5, 24.3]      0.1         5.9/5.7                 12.8/12.1       
+  Lex0   general matrix          12       27.4 [21.4, 33.5]       25.5 [19.5, 32.0]     -1.8         8.9/7.4                 18.4/18.1       
+  Lex0   D5 subset               12       15.8 [11.3, 20.6]       16.8 [13.2, 21.3]      1.0         3.9/5.4                  6.8/6.7        
+  Lex10  structured              72         7.4 [4.8, 10.5]        10.1 [7.6, 13.1]      2.8         4.8/2.6                  0.5/4.1        
+  Lex10  general matrix          12        12.1 [4.1, 21.2]        11.2 [5.6, 17.8]     -0.9         4.9/5.8                  7.2/5.5        
+  Lex10  D5 subset               12         3.5 [-1.9, 8.6]         7.5 [3.9, 11.1]      4.0         8.7/2.2                 -4.7/1.1        
+      D3 night minimisation: 12/240 tasks, 26 s
+      D3 night minimisation: 24/240 tasks, 26 s
+      D3 night minimisation: 36/240 tasks, 47 s
+      D3 night minimisation: 48/240 tasks, 51 s
+      D3 night minimisation: 60/240 tasks, 75 s
+      D3 night minimisation: 72/240 tasks, 80 s
+      D3 night minimisation: 84/240 tasks, 87 s
+      D3 night minimisation: 96/240 tasks, 95 s
+      D3 night minimisation: 108/240 tasks, 122 s
+      D3 night minimisation: 120/240 tasks, 130 s
+      D3 night minimisation: 132/240 tasks, 136 s
+      D3 night minimisation: 144/240 tasks, 144 s
+      D3 night minimisation: 156/240 tasks, 165 s
+      D3 night minimisation: 168/240 tasks, 170 s
+      D3 night minimisation: 180/240 tasks, 191 s
+      D3 night minimisation: 192/240 tasks, 199 s
+      D3 night minimisation: 204/240 tasks, 210 s
+      D3 night minimisation: 216/240 tasks, 224 s
+      D3 night minimisation: 228/240 tasks, 237 s
+      D3 night minimisation: 240/240 tasks, 244 s
+   D3 night minimisation: 240 tasks (240 run now) in 244 s
+
+  price after the night stage (final, h):
+  scheme set                      n       restored [95% CI]          final [95% CI]   change       redistrib. res/fin        capacity res/fin
+  Lex0   structured              72       20.6 [17.5, 24.3]       20.3 [17.3, 24.0]     -0.3         5.7/5.4                 12.1/12.1       
+  Lex0   general matrix          12       25.5 [19.5, 32.0]       25.5 [19.5, 32.0]      0.0         7.4/7.5                 18.1/18.1       
+  Lex0   D5 subset               12       16.8 [13.2, 21.3]       16.8 [13.1, 21.1]     -0.1         5.4/5.4                  6.7/6.7        
+  Lex10  structured              72        10.1 [7.6, 13.1]         9.1 [6.7, 11.9]     -1.0         2.6/2.5                  4.1/3.6        
+  Lex10  general matrix          12        11.2 [5.6, 17.8]        11.1 [5.5, 17.7]     -0.1         5.8/5.8                  5.5/5.3        
+  Lex10  D5 subset               12         7.5 [3.9, 11.1]         6.4 [3.0, 10.0]     -1.1         2.2/2.5                  1.1/1.6        
+
+======================================================================================================================
+TABLE 4  D3 price of the night rule by factor level (best-known schedules, night rule minus night crew)
+======================================================================================================================
+  dv: attainment difference (% of ranges; lexicographic: in tardiness ranges); dT: tardiness (h, mean and 95%
+  bootstrap interval over instances; %); dS: drawing-in time (h); late%: late orders, night rule / night crew;
+  O: overtime after midnight (h); pause: paused drawing-ins; bind: attainment worse under the rule (%);
+  bindT: tardiness higher under the rule (%); night h: night drawing-in of the best-known night-crew schedule;
+  min: least night drawing-in among night-crew schedules that tie at all three priorities.
+  dT%: ratio of means, 100 * sum(dT) / sum(T night crew); med%: median of the per-instance percentages.
+  Lex0 minimises tardiness first (goal 0); under Lex10 both policies may stop at the tardiness goal, so the
+  price there is the attainment difference dv and dS rather than dT.
+  scheme factor  level   n    dv%         dT h [95% CI]   dT%  med%   dS h   late%   O h pause  bind bindT  night h    min
+  Lex0   C           2  24   9.09     26.9 [20.3, 34.3]  13.3  13.4  -19.5   61/59   3.5   2.3   100   100     36.4   36.1
+  Lex0   C           3  24   5.68     17.6 [13.0, 22.3]   9.2   7.8  -20.3   59/59   3.2   2.7    96    96     41.4   40.9
+  Lex0   C         inf  24   9.51     16.4 [12.0, 21.1]   9.4   9.6  -45.3   59/58   2.6   4.7    96    96     76.3   76.0
+  Lex0   nf          4  36   6.34      11.5 [9.2, 13.9]   7.1   6.4  -16.1   56/54   2.0   2.1    94    94     29.0   28.6
+  Lex0   nf          8  36   9.85     29.2 [24.4, 34.4]  13.4  14.1  -40.6   64/63   4.2   4.4   100   100     73.8   73.4
+  Lex0   lmax      200  24   8.15     21.1 [14.7, 27.7]  13.1  12.6  -19.7   52/50   2.9   3.9    92    92     56.9   56.4
+  Lex0   lmax      300  24   8.11     18.9 [14.2, 25.5]  10.5   8.8  -40.2   59/58   4.1   3.5   100   100     54.4   54.1
+  Lex0   lmax      500  24   8.01     20.9 [15.1, 26.9]   9.3   9.6  -25.2   69/68   2.3   2.2   100   100     42.9   42.4
+  Lex0   delta     1.0  36   8.01     17.3 [13.8, 21.5]  16.3  16.1  -29.6   44/43   2.7   2.9    94    94     45.5   45.2
+  Lex0   delta     0.8  36   8.18     23.3 [18.1, 29.4]   8.6   7.1  -27.2   75/74   3.5   3.5   100   100     57.3   56.8
+  Lex0   all            72   8.09     20.3 [17.3, 24.0]  10.7  10.4  -28.4   60/59   3.1   3.2    97    97     51.4   51.0
+
+  scheme factor  level   n    dv%         dT h [95% CI]   dT%  med%   dS h   late%   O h pause  bind bindT  night h    min
+  Lex10  C           2  24   3.26      13.4 [8.2, 19.4]   6.1   6.7    7.5   61/60   2.8   2.6    83    92     24.5   24.2
+  Lex10  C           3  24   1.35        6.1 [2.8, 9.7]   3.0   1.1   10.4   60/59   2.4   2.5    67    71     24.8   23.9
+  Lex10  C         inf  24   2.88       7.8 [4.5, 11.6]   4.2   2.0    9.3   59/58   1.8   4.7    67    88     51.9   50.5
+  Lex10  nf          4  36   1.50        4.7 [2.7, 6.9]   2.8   1.4    2.6   56/55   1.1   2.1    69    81     20.2   18.8
+  Lex10  nf          8  36   3.50      13.4 [9.3, 18.2]   5.7   5.8   15.5   64/63   3.6   4.4    75    86     47.3   46.9
+  Lex10  lmax      200  24   3.03      11.5 [6.9, 16.7]   6.6   5.1   13.5   52/50   2.3   3.8    75    92     40.2   39.2
+  Lex10  lmax      300  24   2.76       8.4 [4.5, 13.5]   4.3   2.2   10.8   59/59   2.8   3.7    71    83     35.0   34.1
+  Lex10  lmax      500  24   1.71       7.4 [3.6, 11.9]   3.0   1.8    2.9   69/68   1.9   2.3    71    75     26.1   25.3
+  Lex10  delta     1.0  36   3.57      10.3 [7.2, 14.2]   9.1   7.7   -3.0   44/44   2.6   2.9    83    83     35.3   34.7
+  Lex10  delta     0.8  36   1.43       7.9 [4.4, 12.3]   2.7   1.3   21.1   75/74   2.1   3.6    61    83     32.3   31.1
+  Lex10  all            72   2.50       9.1 [6.7, 11.9]   4.5   2.4    9.1   60/59   2.3   3.3    72    83     33.8   32.9
+
+  robustness, general asymmetric changeover matrix:
+  scheme factor  level   n    dv%         dT h [95% CI]   dT%  med%   dS h   late%   O h pause  bind bindT  night h    min
+  Lex0   general        12   9.10     25.5 [19.5, 32.0]  14.0  15.1  -29.5   59/54   5.5   2.6   100   100     57.9   57.3
+  Lex10  general        12   4.67      11.1 [5.5, 17.7]   5.6   5.0   10.9   59/55   4.3   2.9    83    92     37.7   36.5
+
+  factor tests on the price (blocked by the other factors and the seed):
+    Lex0   dT   C      2: 26.9 / 3: 17.6 / inf: 16.4  (blocks 24) Friedman p=0.011; pairs (Holm) 2-3 0.003, 2-inf 0.010, 3-inf 0.831
+    Lex0   dT   nf     4: 11.5 / 8: 29.2  (blocks 36) Wilcoxon p=0.000
+    Lex0   dT   lmax   200: 21.1 / 300: 18.9 / 500: 20.9  (blocks 24) Friedman p=0.959; pairs (Holm) 200-300 1.000, 200-500 1.000, 300-500 1.000
+    Lex0   dT   delta  1.0: 17.3 / 0.8: 23.3  (blocks 36) Wilcoxon p=0.038
+    Lex0   dTp  C      2: 13.4 / 3: 7.8 / inf: 9.6 (medians)  (blocks 24) Friedman p=0.076; pairs (Holm) 2-3 0.020, 2-inf 0.163, 3-inf 0.715
+    Lex0   dTp  nf     4: 6.4 / 8: 14.1 (medians)  (blocks 36) Wilcoxon p=0.014
+    Lex0   dTp  lmax   200: 12.6 / 300: 8.8 / 500: 9.6 (medians)  (blocks 24) Friedman p=0.115; pairs (Holm) 200-300 0.775, 200-500 0.146, 300-500 0.153
+    Lex0   dTp  delta  1.0: 16.1 / 0.8: 7.1 (medians)  (blocks 36) Wilcoxon p=0.000
+    Lex0   dS   C      2: -19.5 / 3: -20.3 / inf: -45.3  (blocks 24) Friedman p=0.873; pairs (Holm) 2-3 1.000, 2-inf 1.000, 3-inf 1.000
+    Lex0   dS   nf     4: -16.1 / 8: -40.6  (blocks 36) Wilcoxon p=0.018
+    Lex0   dS   lmax   200: -19.7 / 300: -40.2 / 500: -25.2  (blocks 24) Friedman p=0.959; pairs (Holm) 200-300 1.000, 200-500 1.000, 300-500 1.000
+    Lex0   dS   delta  1.0: -29.6 / 0.8: -27.2  (blocks 36) Wilcoxon p=0.300
+    Lex10  dv   C      2: 3.3 / 3: 1.4 / inf: 2.9  (blocks 24) Friedman p=0.093; pairs (Holm) 2-3 0.024, 2-inf 0.648, 3-inf 0.574
+    Lex10  dv   nf     4: 1.5 / 8: 3.5  (blocks 36) Wilcoxon p=0.046
+    Lex10  dv   lmax   200: 3.0 / 300: 2.8 / 500: 1.7  (blocks 24) Friedman p=0.048; pairs (Holm) 200-300 0.775, 200-500 0.229, 300-500 0.229
+    Lex10  dv   delta  1.0: 3.6 / 0.8: 1.4  (blocks 36) Wilcoxon p=0.004
+    Lex10  dS   C      2: 7.5 / 3: 10.4 / inf: 9.3  (blocks 24) Friedman p=0.172; pairs (Holm) 2-3 0.673, 2-inf 0.230, 3-inf 0.574
+    Lex10  dS   nf     4: 2.6 / 8: 15.5  (blocks 36) Wilcoxon p=0.081
+    Lex10  dS   lmax   200: 13.5 / 300: 10.8 / 500: 2.9  (blocks 24) Friedman p=0.325; pairs (Holm) 200-300 0.783, 200-500 0.783, 300-500 0.319
+    Lex10  dS   delta  1.0: -3.0 / 0.8: 21.1  (blocks 36) Wilcoxon p=0.003
+    Lex10  dT   C      2: 13.4 / 3: 6.1 / inf: 7.8  (blocks 24) Friedman p=0.037; pairs (Holm) 2-3 0.005, 2-inf 0.362, 3-inf 0.362
+    Lex10  dT   nf     4: 4.7 / 8: 13.4  (blocks 36) Wilcoxon p=0.003
+    Lex10  dT   lmax   200: 11.5 / 300: 8.4 / 500: 7.4  (blocks 24) Friedman p=0.130; pairs (Holm) 200-300 0.587, 200-500 0.538, 300-500 0.538
+    Lex10  dT   delta  1.0: 10.3 / 0.8: 7.9  (blocks 36) Wilcoxon p=0.220
+
+======================================================================================================================
+TABLE 4b  D3 decomposition of the price, C = 3: redistribution (rule - equal crew-hours) and capacity (equal crew-hours - night crew)
+======================================================================================================================
+  hours of tardiness, mean [95% bootstrap interval]; p: Wilcoxon signed-rank test against zero; night: least night drawing-in (h)
+  redistribution = losing the night shift but keeping 3 instead of 2 crews in the day and evening shifts
+  structured changeovers:
+  scheme    n            total dT h    redistrib. (rule-EH)      p      capacity (EH-crew)      p   redist. sh. dS rule-EH night crew night EH
+  Lex0     24     17.6 [13.0, 22.3]          5.4 [1.8, 9.5]  0.006        12.1 [9.0, 15.3]  0.000          31%       -0.8       40.9     36.1
+  Lex10    24        6.1 [2.8, 9.7]         2.5 [-0.1, 5.2]  0.394          3.6 [1.8, 5.8]  0.001          41%        5.3       23.9     29.8
+  general changeover matrix:
+  scheme    n            total dT h    redistrib. (rule-EH)      p      capacity (EH-crew)      p   redist. sh. dS rule-EH night crew night EH
+  Lex0     12     25.5 [19.5, 32.0]         7.5 [2.4, 11.8]  0.028       18.1 [12.3, 24.0]  0.002          29%        3.4       57.3     46.3
+  Lex10    12      11.1 [5.5, 17.7]          5.8 [1.9, 9.4]  0.025         5.3 [0.8, 10.9]  0.099          53%        5.5       36.5     41.7
+  C = inf: the crew capacity does not bind, so its price is a pure timing price (Table 4, level inf)
+
+======================================================================================================================
+TABLE 4e  D3 consistency check: equal crew-hours with C = 3 and night crew with C = 2 are the same problem
+======================================================================================================================
+  Lex0 only (under Lex10 the two instances have different tardiness goals); EH runs use other seeds
+  scheme basis                          n    crew C=2      EH C=3     crew - EH, h [95% CI]  EH better  crew better
+  Lex0   runs before twin pooling      24       207.9       208.7          -0.8 [-2.7, 1.2]          8           12
+  Lex0   best-known after pooling      24       202.7       202.7            0.0 [0.0, 0.0]          0            0
+
+======================================================================================================================
+TABLE 4f  D3 day capacity (Lex0): night rule with more day/evening crews against the night crew with C = 3
+======================================================================================================================
+  set              n                rule C=3                rule C=4                rule C=5              rule C=inf                  EH   (difference to the night crew, h [95% CI]; count rule <= crew)
+  F, C=3          24   17.6 [13.0, 22.3] (1)    10.8 [7.5, 14.2] (2)      6.5 [3.4, 9.6] (4)    0.2 [-4.4, 4.6] (11)  12.1 [9.0, 15.3] (1)
+  R               12   25.5 [19.5, 32.0] (0)    13.7 [9.5, 18.7] (0)     7.5 [3.3, 11.7] (3)                      --  18.1 [12.3, 24.0] (0)
+
+======================================================================================================================
+TABLE 4c  D3 search noise of GP-RKO per policy (tardiness, h)
+======================================================================================================================
+  scheme policy              rep spread T h (mean/median/max)  run gap to BKS T h (mean/median)
+  Lex0   night rule                  18.5      14.5      78.3                23.3          15.6
+  Lex0   night crew                  11.1       8.7      74.9                18.9          14.8
+  Lex0   equal crew-hours            18.1      15.7      51.5                25.2          21.1
+  Lex10  night rule                  15.9      12.0      73.0                22.3          15.8
+  Lex10  night crew                   5.2       1.9      49.6                15.9          11.6
+  Lex10  equal crew-hours            15.3      13.5      50.6                22.0          18.6
+
+======================================================================================================================
+TABLE 5  D3 dispatching rules under the night rule: excess attainment over the best known (% of ranges)
+======================================================================================================================
+  scheme         EDD     ATCS      FAM     NEDD    NATCS   GP-RKO  best rule dT h   best rule share
+  Lex0        817.02   103.54    53.84   111.03   108.49     5.72    151.9 (109.6)   EDD 3, ATCS 6, FAM 54, NEDD 8, NATCS 1
+  Lex10       814.55   101.07    51.77   108.77   106.02     5.50    148.5 (108.3)   EDD 3, ATCS 6, FAM 53, NEDD 9, NATCS 1
+
+#### D6  goal-setting bias: tardiness goal pinned at the payoff-table ideal (D5 subset)
+      payoff tables: 1/12 tasks, 193 s
+      payoff tables: 2/12 tasks, 193 s
+      payoff tables: 3/12 tasks, 200 s
+      payoff tables: 4/12 tasks, 200 s
+      payoff tables: 5/12 tasks, 200 s
+      payoff tables: 6/12 tasks, 200 s
+      payoff tables: 7/12 tasks, 200 s
+      payoff tables: 8/12 tasks, 200 s
+      payoff tables: 9/12 tasks, 200 s
+      payoff tables: 10/12 tasks, 200 s
+      payoff tables: 11/12 tasks, 210 s
+      payoff tables: 12/12 tasks, 210 s
+   payoff tables: 12 tasks (12 run now) in 210 s
+      D6 runs Lex0P: 5/112 tasks, 97 s
+      D6 runs Lex0P: 10/112 tasks, 100 s
+      D6 runs Lex0P: 15/112 tasks, 100 s
+      D6 runs Lex0P: 20/112 tasks, 103 s
+      D6 runs Lex0P: 25/112 tasks, 105 s
+      D6 runs Lex0P: 30/112 tasks, 200 s
+      D6 runs Lex0P: 35/112 tasks, 201 s
+      D6 runs Lex0P: 40/112 tasks, 201 s
+      D6 runs Lex0P: 45/112 tasks, 202 s
+      D6 runs Lex0P: 50/112 tasks, 292 s
+      D6 runs Lex0P: 55/112 tasks, 295 s
+      D6 runs Lex0P: 60/112 tasks, 302 s
+      D6 runs Lex0P: 65/112 tasks, 305 s
+      D6 runs Lex0P: 70/112 tasks, 307 s
+      D6 runs Lex0P: 75/112 tasks, 397 s
+      D6 runs Lex0P: 80/112 tasks, 401 s
+      D6 runs Lex0P: 85/112 tasks, 406 s
+      D6 runs Lex0P: 90/112 tasks, 411 s
+      D6 runs Lex0P: 95/112 tasks, 411 s
+      D6 runs Lex0P: 100/112 tasks, 494 s
+      D6 runs Lex0P: 105/112 tasks, 496 s
+      D6 runs Lex0P: 110/112 tasks, 496 s
+   D6 runs Lex0P: 112 tasks (112 run now) in 496 s
+   D6 runs Lex0P: twin pooling over 4 groups (568 shared schedules)
+      D6 runs Lex10P: 5/112 tasks, 98 s
+      D6 runs Lex10P: 10/112 tasks, 99 s
+      D6 runs Lex10P: 15/112 tasks, 99 s
+      D6 runs Lex10P: 20/112 tasks, 101 s
+      D6 runs Lex10P: 25/112 tasks, 104 s
+      D6 runs Lex10P: 30/112 tasks, 198 s
+      D6 runs Lex10P: 35/112 tasks, 198 s
+      D6 runs Lex10P: 40/112 tasks, 198 s
+      D6 runs Lex10P: 45/112 tasks, 200 s
+      D6 runs Lex10P: 50/112 tasks, 288 s
+      D6 runs Lex10P: 55/112 tasks, 292 s
+      D6 runs Lex10P: 60/112 tasks, 299 s
+      D6 runs Lex10P: 65/112 tasks, 299 s
+      D6 runs Lex10P: 70/112 tasks, 302 s
+      D6 runs Lex10P: 75/112 tasks, 390 s
+      D6 runs Lex10P: 80/112 tasks, 394 s
+      D6 runs Lex10P: 85/112 tasks, 401 s
+      D6 runs Lex10P: 90/112 tasks, 403 s
+      D6 runs Lex10P: 95/112 tasks, 403 s
+      D6 runs Lex10P: 100/112 tasks, 488 s
+      D6 runs Lex10P: 105/112 tasks, 488 s
+      D6 runs Lex10P: 110/112 tasks, 488 s
+   D6 runs Lex10P: 112 tasks (112 run now) in 488 s
+   D6 runs Lex10P: twin pooling over 4 groups (1016 shared schedules)
+      D6 polishing: 5/112 tasks, 284 s
+      D6 polishing: 10/112 tasks, 301 s
+      D6 polishing: 15/112 tasks, 301 s
+      D6 polishing: 20/112 tasks, 568 s
+      D6 polishing: 25/112 tasks, 573 s
+      D6 polishing: 30/112 tasks, 595 s
+      D6 polishing: 35/112 tasks, 601 s
+      D6 polishing: 40/112 tasks, 871 s
+      D6 polishing: 45/112 tasks, 882 s
+      D6 polishing: 50/112 tasks, 954 s
+      D6 polishing: 55/112 tasks, 1173 s
+      D6 polishing: 60/112 tasks, 1180 s
+      D6 polishing: 65/112 tasks, 1180 s
+      D6 polishing: 70/112 tasks, 1180 s
+      D6 polishing: 75/112 tasks, 1180 s
+      D6 polishing: 80/112 tasks, 1180 s
+      D6 polishing: 85/112 tasks, 1180 s
+      D6 polishing: 90/112 tasks, 1180 s
+      D6 polishing: 95/112 tasks, 1180 s
+      D6 polishing: 100/112 tasks, 1227 s
+      D6 polishing: 105/112 tasks, 1248 s
+      D6 polishing: 110/112 tasks, 1255 s
+   D6 polishing: 112 tasks (112 run now) in 1255 s
+   D6 polishing: twin pooling over 4 groups (1240 shared schedules)
+      D6 restoration: 2/56 tasks, 46 s
+      D6 restoration: 4/56 tasks, 47 s
+      D6 restoration: 6/56 tasks, 47 s
+      D6 restoration: 8/56 tasks, 47 s
+      D6 restoration: 10/56 tasks, 50 s
+      D6 restoration: 12/56 tasks, 50 s
+      D6 restoration: 14/56 tasks, 50 s
+      D6 restoration: 16/56 tasks, 50 s
+      D6 restoration: 18/56 tasks, 50 s
+      D6 restoration: 20/56 tasks, 94 s
+      D6 restoration: 22/56 tasks, 95 s
+      D6 restoration: 24/56 tasks, 95 s
+      D6 restoration: 26/56 tasks, 95 s
+      D6 restoration: 28/56 tasks, 95 s
+      D6 restoration: 30/56 tasks, 99 s
+      D6 restoration: 32/56 tasks, 101 s
+      D6 restoration: 34/56 tasks, 101 s
+      D6 restoration: 36/56 tasks, 103 s
+      D6 restoration: 38/56 tasks, 144 s
+      D6 restoration: 40/56 tasks, 144 s
+      D6 restoration: 42/56 tasks, 146 s
+      D6 restoration: 44/56 tasks, 147 s
+      D6 restoration: 46/56 tasks, 147 s
+      D6 restoration: 48/56 tasks, 147 s
+      D6 restoration: 50/56 tasks, 154 s
+      D6 restoration: 52/56 tasks, 154 s
+      D6 restoration: 54/56 tasks, 154 s
+      D6 restoration: 56/56 tasks, 166 s
+   D6 restoration: 56 tasks (56 run now) in 166 s
+
+======================================================================================================================
+TABLE 8  D6 goal-setting bias: price with the tardiness goal pinned at the payoff-table ideal (P)
+          against D3 (Lex0: goal 0; ideal updated) on the same instances (h of tardiness)
+======================================================================================================================
+  payoff-table ideal of tardiness identical to that of D3 in 12/12 instances
+  F02-1    goal    84.0  pinned: rule    76.2 crew    82.2 price   -5.9 (crew at goal)| D3: rule    72.8 crew    52.2 price   20.6
+  F03-1    goal   288.2  pinned: rule   281.8 crew   281.8 price    0.1 (crew at goal)| D3: rule   258.8 crew   245.0 price   13.8
+  F08-1    goal   154.5  pinned: rule   160.8 crew   150.5 price   10.3 (crew at goal)| D3: rule   137.1 crew   127.3 price    9.7
+  F09-1    goal   398.9  pinned: rule   396.8 crew   398.9 price   -2.1 (crew at goal)| D3: rule   382.6 crew   353.3 price   29.4
+  F14-1    goal    71.9  pinned: rule    71.0 crew    71.1 price   -0.2 (crew at goal)| D3: rule    63.9 crew    52.2 price   11.7
+  F15-1    goal   261.9  pinned: rule   266.4 crew   257.4 price    9.0 (crew at goal)| D3: rule   255.4 crew   242.1 price   13.3
+  F20-1    goal   142.9  pinned: rule   146.8 crew   139.9 price    6.9 (crew at goal)| D3: rule   129.4 crew   118.3 price   11.1
+  F21-1    goal   374.8  pinned: rule   374.3 crew   370.2 price    4.1 (crew at goal)| D3: rule   350.6 crew   338.4 price   12.2
+  F26-1    goal    44.0  pinned: rule    55.5 crew    43.7 price   11.8 (crew at goal)| D3: rule    55.5 crew    43.3 price   12.2
+  F27-1    goal   234.4  pinned: rule   239.7 crew   234.4 price    5.4 (crew at goal)| D3: rule   239.7 crew   225.8 price   14.0
+  F32-1    goal    96.1  pinned: rule   132.1 crew    96.1 price   36.0 (crew at goal)| D3: rule   112.8 crew    93.1 price   19.7
+  F33-1    goal   336.4  pinned: rule   335.3 crew   336.2 price   -0.8 (crew at goal)| D3: rule   334.3 crew   301.0 price   33.4
+
+  Lex0, pinned goal: price    6.2 [1.2, 12.6] h; night-crew schedules at the pinned goal in 12/12 instances
+  Lex0, D3 (goal 0, updated ideal): price   16.8 [13.1, 21.1] h
+  pinned minus D3: price  -10.5 [-18.3, -2.4] h, Wilcoxon p=0.028; relative -63%
+  tardiness, pinned minus D3: night rule   12.0 [6.8, 16.9] h, night crew   22.5 [14.8, 30.2] h
+  Lex10 attainment difference (% of R_T): pinned   1.55 [0.00, 4.18], D3   2.03 [0.54, 3.84]
+
+#### D4  case study: tolerance curve of the lexicographic GP (Lex0 first, then the other schemes)
+   payoff tables: 1 tasks (1 run now) in 74 s
+   CASE       n=117 m=50 C=3 orders=15 | ideal T=92.2h S=0.0h O=0.0h | nadir T=249.4h S=57.4h O=1.4h
+   15 orders, 117 beams, families (h) 0:3, 1:5, 2:7, 3:9
+      D4 runs Lex0: 1/18 tasks, 0 s
+      D4 runs Lex0: 2/18 tasks, 53 s
+      D4 runs Lex0: 3/18 tasks, 53 s
+      D4 runs Lex0: 4/18 tasks, 53 s
+      D4 runs Lex0: 5/18 tasks, 54 s
+      D4 runs Lex0: 6/18 tasks, 54 s
+      D4 runs Lex0: 7/18 tasks, 54 s
+      D4 runs Lex0: 8/18 tasks, 54 s
+      D4 runs Lex0: 9/18 tasks, 54 s
+      D4 runs Lex0: 10/18 tasks, 54 s
+      D4 runs Lex0: 11/18 tasks, 54 s
+      D4 runs Lex0: 12/18 tasks, 54 s
+      D4 runs Lex0: 13/18 tasks, 54 s
+      D4 runs Lex0: 14/18 tasks, 54 s
+      D4 runs Lex0: 15/18 tasks, 54 s
+      D4 runs Lex0: 16/18 tasks, 54 s
+      D4 runs Lex0: 17/18 tasks, 54 s
+      D4 runs Lex0: 18/18 tasks, 54 s
+   D4 runs Lex0: 18 tasks (18 run now) in 54 s
+   D4 runs Lex0: ideal improved after all runs in 1/1 instances; T by mean 4.8 h (max 4.8 h, mean 2.96% of R_T), S by mean 0.0 h; goals and attainments recomputed
+      D4 runs, other schemes: 7/144 tasks, 62 s
+      D4 runs, other schemes: 14/144 tasks, 63 s
+      D4 runs, other schemes: 21/144 tasks, 63 s
+      D4 runs, other schemes: 28/144 tasks, 124 s
+      D4 runs, other schemes: 35/144 tasks, 125 s
+      D4 runs, other schemes: 42/144 tasks, 125 s
+      D4 runs, other schemes: 49/144 tasks, 186 s
+      D4 runs, other schemes: 56/144 tasks, 187 s
+      D4 runs, other schemes: 63/144 tasks, 188 s
+      D4 runs, other schemes: 70/144 tasks, 248 s
+      D4 runs, other schemes: 77/144 tasks, 248 s
+      D4 runs, other schemes: 84/144 tasks, 249 s
+      D4 runs, other schemes: 91/144 tasks, 307 s
+      D4 runs, other schemes: 98/144 tasks, 309 s
+      D4 runs, other schemes: 105/144 tasks, 312 s
+      D4 runs, other schemes: 112/144 tasks, 366 s
+      D4 runs, other schemes: 119/144 tasks, 369 s
+      D4 runs, other schemes: 126/144 tasks, 371 s
+      D4 runs, other schemes: 133/144 tasks, 415 s
+      D4 runs, other schemes: 140/144 tasks, 417 s
+   D4 runs, other schemes: 144 tasks (144 run now) in 418 s
+   D4 runs, other schemes: ideal improved after all runs in 0/1 instances; T by mean 0.0 h (max 0.0 h, mean 0.00% of R_T), S by mean 0.0 h; goals and attainments recomputed
+      D4 restoration: 1/27 tasks, 30 s
+      D4 restoration: 2/27 tasks, 30 s
+      D4 restoration: 3/27 tasks, 30 s
+      D4 restoration: 4/27 tasks, 30 s
+      D4 restoration: 5/27 tasks, 30 s
+      D4 restoration: 6/27 tasks, 30 s
+      D4 restoration: 7/27 tasks, 30 s
+      D4 restoration: 8/27 tasks, 31 s
+      D4 restoration: 9/27 tasks, 31 s
+      D4 restoration: 10/27 tasks, 31 s
+      D4 restoration: 11/27 tasks, 31 s
+      D4 restoration: 12/27 tasks, 31 s
+      D4 restoration: 13/27 tasks, 31 s
+      D4 restoration: 14/27 tasks, 31 s
+      D4 restoration: 15/27 tasks, 31 s
+      D4 restoration: 16/27 tasks, 31 s
+      D4 restoration: 17/27 tasks, 31 s
+      D4 restoration: 18/27 tasks, 31 s
+      D4 restoration: 19/27 tasks, 48 s
+      D4 restoration: 20/27 tasks, 49 s
+      D4 restoration: 21/27 tasks, 49 s
+      D4 restoration: 22/27 tasks, 49 s
+      D4 restoration: 23/27 tasks, 49 s
+      D4 restoration: 24/27 tasks, 49 s
+      D4 restoration: 25/27 tasks, 49 s
+      D4 restoration: 26/27 tasks, 49 s
+      D4 restoration: 27/27 tasks, 49 s
+   D4 restoration: 27 tasks (27 run now) in 49 s
+   D4 after restoration: ideal improved after all runs in 0/1 instances; T by mean 0.0 h (max 0.0 h, mean 0.00% of R_T), S by mean 0.0 h; goals and attainments recomputed
+      D4 night minimisation: 1/18 tasks, 30 s
+      D4 night minimisation: 2/18 tasks, 30 s
+      D4 night minimisation: 3/18 tasks, 30 s
+      D4 night minimisation: 4/18 tasks, 30 s
+      D4 night minimisation: 5/18 tasks, 30 s
+      D4 night minimisation: 6/18 tasks, 30 s
+      D4 night minimisation: 7/18 tasks, 31 s
+      D4 night minimisation: 8/18 tasks, 31 s
+      D4 night minimisation: 9/18 tasks, 31 s
+      D4 night minimisation: 10/18 tasks, 31 s
+      D4 night minimisation: 11/18 tasks, 31 s
+      D4 night minimisation: 12/18 tasks, 31 s
+      D4 night minimisation: 13/18 tasks, 31 s
+      D4 night minimisation: 14/18 tasks, 31 s
+      D4 night minimisation: 15/18 tasks, 31 s
+      D4 night minimisation: 16/18 tasks, 31 s
+      D4 night minimisation: 17/18 tasks, 31 s
+      D4 night minimisation: 18/18 tasks, 31 s
+   D4 night minimisation: 18 tasks (18 run now) in 31 s
+
+======================================================================================================================
+TABLE 6  D4 case: best-known schedules per scheme and policy
+======================================================================================================================
+  counterfactual policies: nightDI of the best-known schedule; 'night min' = least night drawing-in among schedules
+  that tie with it at all three priorities
+  Lex0     night rule        T=   91.2h [late 6, mean 15.2h, max 48.3h] S=  37.6h O=  0.0h E=   75983TL | nDI=  6 pause= 0 OT= 0 nightDI=  0.0h wait=  15.5h Cmax= 4.49d  | GP-RKO dv mean 6.63 sd 7.49
+  Lex0     night crew        T=   87.4h [late 6, mean 14.6h, max 44.3h] S=  34.3h O=  0.0h E=   75854TL | nDI=  5 pause= 0 OT= 0 nightDI= 15.4h wait=   0.0h Cmax= 4.33d | night min  15.4h  | GP-RKO dv mean 9.47 sd 1.94
+  Lex0     equal crew-hours  T=   87.4h [late 6, mean 14.6h, max 44.3h] S=  34.3h O=  0.0h E=   75854TL | nDI=  5 pause= 0 OT= 0 nightDI= 15.4h wait=   0.0h Cmax= 4.33d | night min  15.4h  | GP-RKO dv mean 9.64 sd 6.50
+  Lex5     night rule        T=   91.4h [late 6, mean 15.2h, max 48.3h] S=  33.7h O=  0.0h E=   75978TL | nDI=  5 pause= 0 OT= 0 nightDI=  0.0h wait=  15.5h Cmax= 4.49d  | GP-RKO dv mean 6.43 sd 7.34
+  Lex5     night crew        T=   88.7h [late 6, mean 14.8h, max 45.6h] S=  33.7h O=  0.0h E=   75863TL | nDI=  5 pause= 0 OT= 0 nightDI= 15.5h wait=   0.0h Cmax= 4.38d | night min   8.2h  | GP-RKO dv mean 6.77 sd 1.94
+  Lex5     equal crew-hours  T=   88.7h [late 6, mean 14.8h, max 45.6h] S=  33.7h O=  0.0h E=   75804TL | nDI=  5 pause= 0 OT= 0 nightDI=  8.2h wait=   0.0h Cmax= 4.38d | night min   8.2h  | GP-RKO dv mean 7.48 sd 5.54
+  Lex10    night rule        T=   91.4h [late 6, mean 15.2h, max 48.3h] S=  33.7h O=  0.0h E=   75978TL | nDI=  5 pause= 0 OT= 0 nightDI=  0.0h wait=  15.5h Cmax= 4.49d  | GP-RKO dv mean 4.81 sd 6.22
+  Lex10    night crew        T=   88.7h [late 6, mean 14.8h, max 45.6h] S=  33.7h O=  0.0h E=   75863TL | nDI=  5 pause= 0 OT= 0 nightDI= 15.5h wait=   0.0h Cmax= 4.38d | night min   8.2h  | GP-RKO dv mean 4.07 sd 1.94
+  Lex10    equal crew-hours  T=   88.7h [late 6, mean 14.8h, max 45.6h] S=  33.7h O=  0.0h E=   75804TL | nDI=  5 pause= 0 OT= 0 nightDI=  8.2h wait=   0.0h Cmax= 4.38d | night min   8.2h  | GP-RKO dv mean 5.32 sd 4.70
+  Lex20    night rule        T=  100.8h [late 5, mean 20.2h, max 53.3h] S=  15.8h O=  0.0h E=   76214TL | nDI=  2 pause= 1 OT= 0 nightDI=  0.0h wait=   0.0h Cmax= 4.70d  | GP-RKO dv mean 2.48 sd 3.43
+  Lex20    night crew        T=  100.8h [late 5, mean 20.2h, max 53.3h] S=  15.8h O=  0.0h E=   76134TL | nDI=  2 pause= 0 OT= 0 nightDI=  5.0h wait=   0.0h Cmax= 4.70d | night min   5.0h  | GP-RKO dv mean 0.43 sd 0.96
+  Lex20    equal crew-hours  T=  100.8h [late 5, mean 20.2h, max 53.3h] S=  15.8h O=  0.0h E=   76134TL | nDI=  2 pause= 0 OT= 0 nightDI=  5.0h wait=   0.0h Cmax= 4.70d | night min   5.0h  | GP-RKO dv mean 1.99 sd 1.95
+  Lex30    night rule        T=  100.8h [late 5, mean 20.2h, max 53.3h] S=  15.8h O=  0.0h E=   76214TL | nDI=  2 pause= 1 OT= 0 nightDI=  0.0h wait=   0.0h Cmax= 4.70d  | GP-RKO dv mean 0.32 sd 0.65
+  Lex30    night crew        T=  100.8h [late 5, mean 20.2h, max 53.3h] S=  15.8h O=  0.0h E=   76134TL | nDI=  2 pause= 0 OT= 0 nightDI=  5.0h wait=   0.0h Cmax= 4.70d | night min   5.0h  | GP-RKO dv mean 0.00 sd 0.00
+  Lex30    equal crew-hours  T=  100.8h [late 5, mean 20.2h, max 53.3h] S=  15.8h O=  0.0h E=   76134TL | nDI=  2 pause= 0 OT= 0 nightDI=  5.0h wait=   0.0h Cmax= 4.70d | night min   5.0h  | GP-RKO dv mean 0.00 sd 0.00
+  Balanced night rule        T=  100.8h [late 5, mean 20.2h, max 53.3h] S=  15.8h O=  0.0h E=   76214TL | nDI=  2 pause= 1 OT= 0 nightDI=  0.0h wait=   0.0h Cmax= 4.70d  | GP-RKO dv mean 11.46 sd 2.82
+  Balanced night crew        T=  115.1h [late 7, mean 16.4h, max 53.3h] S=  15.2h O=  0.0h E=   75998TL | nDI=  2 pause= 0 OT= 0 nightDI=  7.8h wait=   0.0h Cmax= 4.70d | night min   7.8h  | GP-RKO dv mean 16.42 sd 3.45
+  Balanced equal crew-hours  T=  115.1h [late 7, mean 16.4h, max 53.3h] S=  15.2h O=  0.0h E=   75998TL | nDI=  2 pause= 0 OT= 0 nightDI=  7.8h wait=   0.0h Cmax= 4.70d | night min   7.8h  | GP-RKO dv mean 5.20 sd 5.91
+  Delivery night rule        T=  100.8h [late 5, mean 20.2h, max 53.3h] S=  15.8h O=  0.0h E=   76214TL | nDI=  2 pause= 1 OT= 0 nightDI=  0.0h wait=   0.0h Cmax= 4.70d  | GP-RKO dv mean 10.83 sd 1.73
+  Delivery night crew        T=  100.8h [late 5, mean 20.2h, max 53.3h] S=  15.8h O=  0.0h E=   76134TL | nDI=  2 pause= 0 OT= 0 nightDI=  5.0h wait=   0.0h Cmax= 4.70d | night min   5.0h  | GP-RKO dv mean 9.90 sd 2.59
+  Delivery equal crew-hours  T=  100.8h [late 5, mean 20.2h, max 53.3h] S=  15.8h O=  0.0h E=   76134TL | nDI=  2 pause= 0 OT= 0 nightDI=  5.0h wait=   0.0h Cmax= 4.70d | night min   5.0h  | GP-RKO dv mean 9.46 sd 4.06
+  Labour   night rule        T=  153.7h [late 9, mean 17.1h, max 74.2h] S=  11.2h O=  0.0h E=   76227TL | nDI=  2 pause= 1 OT= 0 nightDI=  0.0h wait=   0.1h Cmax= 5.57d  | GP-RKO dv mean 4.84 sd 1.92
+  Labour   night crew        T=  152.4h [late 9, mean 16.9h, max 72.8h] S=  11.2h O=  0.0h E=   76180TL | nDI=  2 pause= 0 OT= 0 nightDI=  6.7h wait=   0.0h Cmax= 5.52d | night min   6.6h  | GP-RKO dv mean 4.72 sd 3.03
+  Labour   equal crew-hours  T=  152.4h [late 9, mean 16.9h, max 72.8h] S=  11.2h O=  0.0h E=   76180TL | nDI=  2 pause= 0 OT= 0 nightDI=  6.7h wait=   0.0h Cmax= 5.52d | night min   6.6h  | GP-RKO dv mean 8.93 sd 3.19
+  NightSafenight rule        T=  100.8h [late 5, mean 20.2h, max 53.3h] S=  15.8h O=  0.0h E=   76214TL | nDI=  2 pause= 1 OT= 0 nightDI=  0.0h wait=   0.0h Cmax= 4.70d  | GP-RKO dv mean 3.87 sd 1.46
+  NightSafenight crew        T=  115.1h [late 7, mean 16.4h, max 53.3h] S=  15.2h O=  0.0h E=   75998TL | nDI=  2 pause= 0 OT= 0 nightDI=  7.8h wait=   0.0h Cmax= 4.70d | night min   7.8h  | GP-RKO dv mean 4.18 sd 0.65
+  NightSafeequal crew-hours  T=  115.1h [late 7, mean 16.4h, max 53.3h] S=  15.2h O=  0.0h E=   75998TL | nDI=  2 pause= 0 OT= 0 nightDI=  7.8h wait=   0.0h Cmax= 4.70d | night min   7.8h  | GP-RKO dv mean 2.93 sd 2.71
+
+Saved v9_D1_D3_D6_D4_results.csv
+Saved figures v9_D1_D3_D6_D4_crews.png, v9_D1_D3_D6_D4_tolerance.png, v9_D1_D3_D6_D4_pricemap.png
+
+Total time 5347 s.  Done.
