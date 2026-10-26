@@ -1,0 +1,72 @@
+
+TABLE 5  price of the night rule, Lex0, set F (rule minus crew; dT% ratio of means)
+  level                  n    dv%         dT h [95% CI]    dT%   med%    dS h   late%   O h pause  bind   night
+  crews C 2             24   9.09     26.9 [20.3, 34.3]   13.3   13.4   -19.5   61/59   3.5   2.3   100    36.1
+  crews C 3             24   5.68     17.6 [13.0, 22.3]    9.2    7.8   -20.3   59/59   3.2   2.7    96    40.9
+  crews C inf           24   9.51     16.4 [12.0, 21.1]    9.4    9.6   -45.3   59/58   2.6   4.7    96    76.0
+  families n_f 4        36   6.34      11.5 [9.2, 13.9]    7.1    6.4   -16.1   56/54   2.0   2.1    94    28.6
+  families n_f 8        36   9.85     29.2 [24.4, 34.4]   13.4   14.1   -40.6   64/63   4.2   4.4   100    73.4
+  L_max 200             24   8.15     21.1 [14.7, 27.7]   13.1   12.6   -19.7   52/50   2.9   3.9    92    56.4
+  L_max 300             24   8.11     18.9 [14.2, 25.5]   10.5    8.8   -40.2   59/58   4.1   3.5   100    54.1
+  L_max 500             24   8.01     20.9 [15.1, 26.9]    9.3    9.6   -25.2   69/68   2.3   2.2   100    42.4
+  tightness delta 1.0   36   8.01     17.3 [13.8, 21.5]   16.3   16.1   -29.6   44/43   2.7   2.9    94    45.2
+  tightness delta 0.8   36   8.18     23.3 [18.1, 29.4]    8.6    7.1   -27.2   75/74   3.5   3.5   100    56.8
+  all (F)               72   8.09     20.3 [17.3, 24.0]   10.7   10.4   -28.4   60/59   3.1   3.2    97    51.0
+  general matrix (R)    12   9.10     25.5 [19.5, 32.0]   14.0   15.1   -29.5   59/54   5.5   2.6   100    57.3
+  electricity bill, rule minus crew: mean -0.10%, max |.| 1.06%
+
+  factor tests, Lex0 (Online Resource 1, Table S4):
+    dT   C      2: 26.9 / 3: 17.6 / inf: 16.4  Friedman p=0.011; pairs (Holm) 2-3 0.003, 2-inf 0.010, 3-inf 0.831
+    dT   nf     4: 11.5 / 8: 29.2  Wilcoxon p=0.000
+    dT   lmax   200: 21.1 / 300: 18.9 / 500: 20.9  Friedman p=0.959; pairs (Holm) 200-300 1.000, 200-500 1.000, 300-500 1.000
+    dT   delta  1.0: 17.3 / 0.8: 23.3  Wilcoxon p=0.038
+    dTp  C      2: 13.4 / 3: 7.8 / inf: 9.6  Friedman p=0.076; pairs (Holm) 2-3 0.020, 2-inf 0.163, 3-inf 0.715
+    dTp  nf     4: 6.4 / 8: 14.1  Wilcoxon p=0.014
+    dTp  lmax   200: 12.6 / 300: 8.8 / 500: 9.6  Friedman p=0.115; pairs (Holm) 200-300 0.775, 200-500 0.146, 300-500 0.153
+    dTp  delta  1.0: 16.1 / 0.8: 7.1  Wilcoxon p=0.000
+    dS   C      2: -19.5 / 3: -20.3 / inf: -45.3  Friedman p=0.873; pairs (Holm) 2-3 1.000, 2-inf 1.000, 3-inf 1.000
+    dS   nf     4: -16.1 / 8: -40.6  Wilcoxon p=0.018
+    dS   lmax   200: -19.7 / 300: -40.2 / 500: -25.2  Friedman p=0.959; pairs (Holm) 200-300 1.000, 200-500 1.000, 300-500 1.000
+    dS   delta  1.0: -29.6 / 0.8: -27.2  Wilcoxon p=0.300
+
+TABLE 5  price of the night rule, Lex10, set F (rule minus crew; dT% ratio of means)
+  level                  n    dv%         dT h [95% CI]    dT%   med%    dS h   late%   O h pause  bind   night
+  crews C 2             24   3.26      13.4 [8.2, 19.4]    6.1    6.7     7.5   61/60   2.8   2.6    83    24.2
+  crews C 3             24   1.35        6.1 [2.8, 9.7]    3.0    1.1    10.4   60/59   2.4   2.5    67    23.9
+  crews C inf           24   2.88       7.8 [4.5, 11.6]    4.2    2.0     9.3   59/58   1.8   4.7    67    50.5
+  families n_f 4        36   1.50        4.7 [2.7, 6.9]    2.8    1.4     2.6   56/55   1.1   2.1    69    18.8
+  families n_f 8        36   3.50      13.4 [9.3, 18.2]    5.7    5.8    15.5   64/63   3.6   4.4    75    46.9
+  L_max 200             24   3.03      11.5 [6.9, 16.7]    6.6    5.1    13.5   52/50   2.3   3.8    75    39.2
+  L_max 300             24   2.76       8.4 [4.5, 13.5]    4.3    2.2    10.8   59/59   2.8   3.7    71    34.1
+  L_max 500             24   1.71       7.4 [3.6, 11.9]    3.0    1.8     2.9   69/68   1.9   2.3    71    25.3
+  tightness delta 1.0   36   3.57      10.3 [7.2, 14.2]    9.1    7.7    -3.0   44/44   2.6   2.9    83    34.7
+  tightness delta 0.8   36   1.43       7.9 [4.4, 12.3]    2.7    1.3    21.1   75/74   2.1   3.6    61    31.1
+  all (F)               72   2.50       9.1 [6.7, 11.9]    4.5    2.4     9.1   60/59   2.3   3.3    72    32.9
+  general matrix (R)    12   4.67      11.1 [5.5, 17.7]    5.6    5.0    10.9   59/55   4.3   2.9    83    36.5
+  electricity bill, rule minus crew: mean -0.06%, max |.| 0.78%
+
+  factor tests, Lex10 (Online Resource 1, Table S4):
+    dv   C      2: 3.3 / 3: 1.4 / inf: 2.9  Friedman p=0.093; pairs (Holm) 2-3 0.024, 2-inf 0.648, 3-inf 0.574
+    dv   nf     4: 1.5 / 8: 3.5  Wilcoxon p=0.046
+    dv   lmax   200: 3.0 / 300: 2.8 / 500: 1.7  Friedman p=0.048; pairs (Holm) 200-300 0.775, 200-500 0.229, 300-500 0.229
+    dv   delta  1.0: 3.6 / 0.8: 1.4  Wilcoxon p=0.004
+    dT   C      2: 13.4 / 3: 6.1 / inf: 7.8  Friedman p=0.037; pairs (Holm) 2-3 0.005, 2-inf 0.362, 3-inf 0.362
+    dT   nf     4: 4.7 / 8: 13.4  Wilcoxon p=0.003
+    dT   lmax   200: 11.5 / 300: 8.4 / 500: 7.4  Friedman p=0.130; pairs (Holm) 200-300 0.587, 200-500 0.538, 300-500 0.538
+    dT   delta  1.0: 10.3 / 0.8: 7.9  Wilcoxon p=0.220
+    dS   C      2: 7.5 / 3: 10.4 / inf: 9.3  Friedman p=0.172; pairs (Holm) 2-3 0.673, 2-inf 0.230, 3-inf 0.574
+    dS   nf     4: 2.6 / 8: 15.5  Wilcoxon p=0.081
+    dS   lmax   200: 13.5 / 300: 10.8 / 500: 2.9  Friedman p=0.325; pairs (Holm) 200-300 0.783, 200-500 0.783, 300-500 0.319
+    dS   delta  1.0: -3.0 / 0.8: 21.1  Wilcoxon p=0.003
+
+TABLE 6  decomposition, C = 3 (h; p: Wilcoxon against zero)
+  Lex0  F, C=3    24  total   17.6 [13.0, 22.3]  redistribution    5.4 [1.8, 9.5] p=0.006  capacity   12.1 [9.0, 15.3] p=0.000
+  Lex0  R         12  total   25.5 [19.5, 32.0]  redistribution    7.5 [2.4, 11.8] p=0.028  capacity   18.1 [12.3, 24.0] p=0.002
+  Lex10 F, C=3    24  total    6.1 [2.8, 9.7]  redistribution    2.5 [-0.1, 5.2] p=0.394  capacity    3.6 [1.8, 5.8] p=0.001
+  Lex10 R         12  total   11.1 [5.5, 17.7]  redistribution    5.8 [1.9, 9.4] p=0.025  capacity    5.3 [0.8, 10.9] p=0.099
+
+TABLE 7  day capacity, Lex0: night rule with C crews minus night crew with C = 3 (h; count not worse)
+  F, C=3    24  C=3:   17.6 [13.0, 22.3] (1)   C=4:   10.8 [7.5, 14.2] (2)   C=5:    6.5 [3.4, 9.6] (4)   C=inf:    0.2 [-4.4, 4.6] (11)
+  R         12  C=3:   25.5 [19.5, 32.0] (0)   C=4:   13.7 [9.5, 18.7] (0)   C=5:    7.5 [3.3, 11.7] (3)
+
+  verification: 480/480 exported schedules reproduced exactly by the evaluator
